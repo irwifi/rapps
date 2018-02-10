@@ -1,56 +1,21 @@
 <?php
-$issues = [];
-
-$issues[] = array(
-    'title' => 'This is a test 1',
-    'description' => 'test 1 description',
-    'author' => 'Tester1',
-    'created_ts' => '2018-02-7 11:03:22',
-    'status' => 'open',
-    'assignee' => 'john',
-    'labels' => 'php,frontend,sql',
-    'id'=>1
-);
-
-$issues[] = array(
-    'title' => 'Test title',
-    'description' => 'test 2 description',
-    'author' => 'Tester3',
-    'created_ts' => '2018-02-7 11:03:22',
-    'status' => 'open',
-    'assignee' => 'steven',
-    'labels' => 'sql',
-    'id'=>2
-);
-
-$issues[] = array(
-    'title' => 'Test three issue created',
-    'description' => 'test hellow world description',
-    'author' => 'john',
-    'created_ts' => '2018-02-7 11:03:22',
-    'status' => 'closed',
-    'assignee' => 'Tester2',
-    'labels' => 'sql',
-    'id'=>3
-);
-/////
-$version=9;
+$version = (time());
 ?>
 
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
-    <title>iTracker</title>
+    <title>Issue Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
 
 
-    <!--  styles -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--  styles -->    
+    <link rel="stylesheet" href="css/bootstrap_3.3.7.css">        
+    <link rel="stylesheet" href="css/fontawesome_4.7.css">
 
-    <link rel="stylesheet" href="css/tracker.css?v=<?=$version?>">
-    <link rel="stylesheet" href="css/notification.css?v=<?=$version?>">
+    <link rel="stylesheet" href="css/tracker.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="css/notification.css?v=<?= $version ?>">       
 
 </head>
 <body>
@@ -58,40 +23,19 @@ $version=9;
     <div class="container-fluid topmargin">
         <div class="row">
             <button class="btn btn-success" data-toggle="modal" data-target="#newIssuePopup">New Issue</button>
+            &nbsp;
+            <button class="btn btn-success" data-toggle="modal" data-target="#searchPopup">Search</button>
         </div>
     </div>
 
     <div class="container-fluid topmargin">
         <div class="row isseusListContainer">
-            <table class="table table-bordered" id="issuesList">
-                <tr>
-                    <th>Status</th><th>Issue</th><th>Author</th><th>Labels</th><th>Assignee</th>
-                </tr>
-                <?php
-
-                foreach ($issues as $issue) {
-                    ?>
-                    <tr>
-                        <td><?= $issue['status']; ?> <img data-id="<?=$issue['id']?>" class="pull-right editIssue" src="images/edit_icon.png" title="edit"/> </td>
-                        <td>
-                            <div class="issueTitle"><a href ='issue.php?id=<?=$issue['id']?>'><?= $issue['title']; ?></a></div>
-                            <div class="issueDescription"><?= substr($issue['description'],0,40); // showing first 40 characters of descirption ?></div>
-                        </td>
-                        <td>
-                            <?= $issue['author']; ?>
-                        </td>
-                        <td>
-                            <?= $issue['labels']; ?>
-                        </td>
-                        <td>
-                            <?= $issue['assignee']; ?>
-                        </td>
-                    </tr>
-                <?php }
-                ?>
+            <table class="table table-bordered table-striped" id="issuesList">
+                
+                
             </table>
-
-        </div>
+            <div id="paginationContainer"></div>
+        </div>        
     </div>
 
 
@@ -107,15 +51,15 @@ $version=9;
                 <div class="modal-body">
                     <div class="container-fluid">
 
-                        <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">                                
                             <div id="formdiv">
-                                <form method="post" role="form" onsubmit="return validateissuecreateform(this);">
-                                    <fieldset>
+                                <form enctype="multipart/form-data" method="post" role="form" onsubmit="return validateissuecreateform(this);">
+                                    <fieldset>                                   
 
                                         <div class="form-group">
                                             <label>Title:</label>
                                             <input type="text" name="title" id="title" class="form-control input-lg" placeholder="Title" required="">
-                                        </div>
+                                        </div>                                      
                                         <div class="form-group">
                                             <label>Description:</label>
                                             <textarea name="description" id="description" class="form-control input-lg" placeholder="Enter issue description here" required=""></textarea>
@@ -123,20 +67,29 @@ $version=9;
 
                                         <div class="form-group">
                                             <label>Assigned To:</label>
-                                            <select name="assignee" class="form-control input-lg">
-                                                <option value="none">N/A</option>
-                                                <option value="tester2">Tester2</option>
-                                                <option value="john">john</option>
-                                                <option value="steven">steven</option>
+                                            <select name="assignee" id="assignee" class="form-control input-lg assigntolist">
+                                                
                                             </select>
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Labels:</label>
-                                            <input type="text" name="labels" id="labels" class="form-control input-lg" placeholder="comma sperated labels">
+                                            <label>Tags:</label>
+                                            <input type="text" name="tags" id="tags" class="form-control input-lg" placeholder="comma sperated tags">
                                         </div>
 
-                                        <input type="hidden" name="author" value="Tester1" />
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <label for="fileselect">Image Files to upload:</label>
+                                                <input type="file" id="fileselect" name="fileselect[]" multiple="multiple" accept="image/x-png,image/gif,image/jpeg" />
+                                            </div>
+                                            <div class="row">                                                
+                                                    <div id="imageCollection">
+
+                                                    </div>                                                
+                                            </div>
+                                        </div>
+
+                                        <input type="hidden" name="author" class="author" value="" />
                                         <input type="hidden" name="action" value="createissue" />
                                         <input type="hidden" name="status" value="open" />
 
@@ -155,13 +108,13 @@ $version=9;
 
 
                     </div>
-                </div>
+                </div>                   
             </div>
 
         </div>
     </div>
 
-     <!-- show edit issue popup -->
+    <!-- show edit issue popup -->
     <div id="editIssuePopup" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
@@ -173,15 +126,15 @@ $version=9;
                 <div class="modal-body">
                     <div class="container-fluid">
 
-                        <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">                                
                             <div id="formdiv">
                                 <form id="editIssueForm" method="post" role="form" onsubmit="return validateissueeditform(this);">
-                                    <fieldset>
+                                    <fieldset>                                   
 
                                         <div class="form-group">
                                             <label>Title:</label>
                                             <input type="text" name="title" id="title_edit" class="form-control input-lg" placeholder="Title" required="">
-                                        </div>
+                                        </div>                                      
                                         <div class="form-group">
                                             <label>Description:</label>
                                             <textarea name="description" id="description_edit" class="form-control input-lg" placeholder="Enter issue description here" required=""></textarea>
@@ -189,15 +142,12 @@ $version=9;
 
                                         <div class="form-group">
                                             <label>Assigned To:</label>
-                                            <select name="assignee" id="assignee_edit" class="form-control input-lg">
-                                                <option value="none">N/A</option>
-                                                <option value="Tester1">Tester1</option>
-                                                <option value="john">john</option>
-                                                <option value="steven">steven</option>
+                                            <select name="assignee" id="assignee_edit" class="form-control input-lg assigntolist">
+                                                
                                             </select>
                                         </div>
 
-                                         <div class="form-group">
+                                        <div class="form-group">
                                             <label>Status:</label>
                                             <select name="status" id="status_edit" class="form-control input-lg">
                                                 <option value="open">open</option>
@@ -206,11 +156,11 @@ $version=9;
                                         </div>
 
                                         <div class="form-group">
-                                            <label>Labels:</label>
-                                            <input type="text" name="labels" id="labels_edit" class="form-control input-lg" placeholder="comma sperated labels">
+                                            <label>Tags:</label>
+                                            <input type="text" name="tags" id="tags_edit" class="form-control input-lg" placeholder="comma sperated tags">
                                         </div>
 
-                                        <input type="hidden" name="author" value="Tester3" />
+                                        <input type="hidden" name="author" class="author" value="" />
                                         <input type="hidden" name="action" value="editissue" />
 
 
@@ -229,23 +179,130 @@ $version=9;
 
 
                     </div>
-                </div>
+                </div>                   
             </div>
 
         </div>
     </div>
+    
+      <!-- show issue popup -->
+    <div id="isseuDetailPopup" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="isseuTitle"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
 
-    <script  src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/velocity.min.js" type="text/javascript"></script>
-    <script src="js/AjaxController.js?v=<?=$version?>" type="text/javascript"></script>
+                        <div class="col-md-12">                                
+                            <span id="createdby">                                
+                            </span>
+                            <span id="createdate">                                
+                            </span>
+                            <span id="status">                                
+                            </span>
+                        </div>
+                        <hr/>
+                        
+                        <div class="col-md-12" id="issueDescription">
+                            
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="col-md-12 text-center">
+                            <a class="btn btn-info" href="" id="issueLink" target="_blank">More Detail</a>
+                        </div>
+
+                    </div>
+                </div>                   
+            </div>
+
+        </div>
+    </div>
+      
+            
+        <!-- show issue popup -->
+    <div id="searchPopup" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Search Issues</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+
+                           <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-2 col-md-offset-2">                                
+                            <div>
+                                <form id="searchIssueForm" method="post" role="form" onsubmit="return validatesearchissueform(this);">
+                                    <fieldset>                                   
+
+                                        <div class="form-group">
+                                            <label>Search Text:</label>
+                                            <input type="text" name="text" id="searchtext" class="form-control input-lg" placeholder="enter text to search" required="">
+                                        </div>                                      
+                                        
+                                         <div class="form-group">
+                                            <label>Search by:</label>
+                                            <select name="searchby" id="searchby" class="form-control input-lg">
+                                                <option value="title">Title</option>
+                                                <option value="tags">Tags</option>
+                                                <option value="description">Description</option>
+                                                <option value="author">Created By</option>
+                                                <option value="assignedto">Assigned To</option>
+                                            </select>
+                                        </div>
+                                      
+                                        <div class="form-group">
+                                            <label>Status:</label>
+                                            <select name="status" id="searchstatus" class="form-control input-lg">
+                                                <option value="any">Any</option>
+                                                <option value="open">Open</option>
+                                                <option value="closed">Closed</option>
+                                                <option value="assigned">Assigned</option>
+                                            </select>
+                                        </div>
+
+                                       
+
+                                        <div class="form-group">
+                                            <div class="text-center">
+                                                <button class="btn btn-danger" type="submit">Search</button>
+                                            </div>
+                                        </div>
+
+                                        <hr>
+
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>                        
+
+                    </div>
+                </div>                   
+            </div>
+
+        </div>
+    </div>
+      
+
+    <script src="js/settings.js?v=<?= $version ?>" type="text/javascript"></script>    
+    <script  src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap_3.3.7.js"  type="text/javascript"></script>
+    <script src="js/velocity.min.js" type="text/javascript"></script>    
+    <script src="js/AjaxController.js?v=<?= $version ?>" type="text/javascript"></script>
     <script src="js/NotificationController.js" type="text/javascript"></script>
-    <script src="js/tracker.js?v=<?=$version?>" type="text/javascript"></script>
+    <script src="js/tracker.js?v=<?= $version ?>" type="text/javascript"></script>
+    <script src="js/imageupload.js?v=<?= $version ?>" type="text/javascript"></script>
 
     <script>
                                     //////// Dummy Json Data ////
-                                    var issues = <?php echo json_encode($issues) ?>;
-                                    console.log(issues);
+                                    getIssuesList();
+                                    getAssignToUsersList();
                                     //////
     </script>
 

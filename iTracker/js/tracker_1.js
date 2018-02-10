@@ -1,38 +1,26 @@
 function validateissuecreateform(form) {
     var fields = $(form).serializeArray();
-
-    var fdata = new FormData();
-    var idata = fields;
-
-    for (var f in $('#fileselect')[0].files) {
-        f = $('#fileselect')[0].files[f];
-        if (f) {
-            var document = f;
-            fdata.append('filelist[]', document);
-        }
+    if (imageUploader.imagesArray.length > 0) {
+        imageUploader.imagesArray.forEach(function (image, i) {
+            fields = fields.concat({name: 'image_' + i, value: image});
+        });
     }
 
-    $.each(idata, function (key, input) {
-        fdata.append(input.name, input.value);
-    });
-
-    //console.log(fdata);
+    console.log(fields);
 
     var success = function (data) {
         form.reset();
         imageUploader.clearImageCollection();
         console.log(data);
         var item = generateIssueJson(fields);
-        window.total_issues_count=window.total_issues_count?window.total_issues_count:1;
-        addIssueToDom(item,window.total_issues_count);
-        window.total_issues_count++;
+        addIssueToDom(item);
         $('#newIssuePopup').modal('hide');
     };
     var error = function (data) {
         console.log(data);
     };
     var url = window.ITsettings.create_issue_url;
-    var data = fdata;
+    var data = fields;
     var prop = {
         processData: false,
         contentType: false
@@ -349,7 +337,6 @@ function displayIssuesList(data) {
             count++;
         }
     }
-    window.total_issues_count=count;
 }
 
 function getAssignToUsersList() {
@@ -444,7 +431,3 @@ $(document).on('click', '.issueTitle', function () {
         $('#isseuDetailPopup').modal('show');
     }
 });
-
-
-window.userloggedin='steve';
-$('.author').val(window.userloggedin);

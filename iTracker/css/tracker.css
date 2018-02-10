@@ -10,6 +10,8 @@ body{
 
 .issueTitle {
     font-weight: bold;
+    cursor: pointer;
+    color: cornflowerblue;
 }
 
 .issueDescription {
@@ -20,9 +22,20 @@ body{
     background-color: #F6F8FA;
 }
 
+th {
+    background-color: lightgrey;
+}
+
+.isseuCreatedTs {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.deleteIssue,
 .editIssue{
     cursor: pointer;
     width: 24px;
+    margin-right: 5px;
 }
 
 .issueDetailTitle{
@@ -46,7 +59,18 @@ body{
     border-radius: 8px;
 }
 
+.imgThumbnail{
+    width: 150px;
+    margin: 3px;
+    border: 1px dotted;
+}
 
+.imgIssueThumnail{
+    width: 150px;
+    margin: 3px;
+    border: 1px dotted;
+    cursor: pointer;
+}
 
 /* Comment box css*/
 
@@ -156,4 +180,8 @@ body{
 }
 .post .post-footer .comments-list .comment > .comments-list {
   margin-left: 50px;
+}
+
+.issuestatusBtns{
+    margin-right: 5px;
 }
