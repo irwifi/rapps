@@ -1,44 +1,15 @@
 <?php
+
 $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : NULL;
 $page = isset($_REQUEST['page']) ? $_REQUEST['page'] : 1;
+$limit_per_page=3;
 
 if ($action === 'getissueslist') {
-    $issues = [];
+    
+    $detail=getIssuesSampleList($page,$limit_per_page);
+    
 
-    $issues[] = array(
-        'title' => 'This is a test 1',
-        'description' => 'test 1 description test 1 description test 1 description test 1 description test 1 description',
-        'author' => 'steve',
-        'created_ts' => '2018-02-7 11:03:22',
-        'status' => 'open',
-        'assignee' => 'john',
-        'tags' => 'php,frontend,sql',
-        'id' => 1
-    );
-
-    $issues[] = array(
-        'title' => 'Test Issue 2',
-        'description' => 'test 2 description test 2 description test 2 description test 2 description test 2 description test 2 description',
-        'author' => 'steve',
-        'created_ts' => '2018-02-7 11:03:22',
-        'status' => 'open',
-        'assignee' => 'steven',
-        'tags' => 'sql',
-        'id' => 2
-    );
-
-    $issues[] = array(
-        'title' => 'Test three issue created',
-        'description' => 'test hellow world description test hellow world description test hellow world description test hellow world description test hellow world description',
-        'author' => 'john',
-        'created_ts' => '2018-02-7 11:03:22',
-        'status' => 'closed',
-        'assignee' => 'steve',
-        'tags' => 'sql',
-        'id' => 3
-    );
-
-    echo json_encode(array('issues'=>$issues,'total_pages'=>5,'current_page'=>$page));
+    echo json_encode(array('issues'=>$detail['data'],'total_pages'=>$detail['pages'],'current_page'=>$page));
     exit();
 } else if ($action === 'getissuesdata') {
     $issue = array(
@@ -50,7 +21,7 @@ if ($action === 'getissueslist') {
         'assignee' => 'john',
         'tags' => 'php,frontend,sql',
         'id' => 1,
-        'image_0' => '',
+        'image_0' => 'http://www.rashflash.com/issue_tracker/images/testimg.png',
         'comments' => array(
             '0' => array(
                 'author' => 'john',
@@ -77,6 +48,124 @@ exit();
 
 
 $imagesArray = getImagesarray($issue);
+
+function getIssuesSampleList($page,$limit){
+    $issues = [];
+
+    $issues[] = array(
+        'title' => 'This is a test 1',
+        'description' => 'test 1 description test 1 description test 1 description test 1 description test 1 description',
+        'author' => 'steve',
+        'created_ts' => '2018-02-7 11:03:22',
+        'status' => 'open',
+        'assignee' => 'john',
+        'tags' => 'php,frontend,sql',
+        'id' => 1
+    );
+
+    $issues[] = array(
+        'title' => '7 DEADLY SINS of a CRYPTO TRADER',
+        'description' => 'test 2 description test 2 description test 2 description test 2 description test 2 description test 2 description',
+        'author' => 'steve',
+        'created_ts' => '2018-02-7 11:03:22',
+        'status' => 'open',
+        'assignee' => 'steven',
+        'tags' => 'sql',
+        'id' => 2
+    );
+
+    $issues[] = array(
+        'title' => 'Test three issue created',
+        'description' => 'test hellow world description test hellow world description test hellow world description test hellow world description test hellow world description',
+        'author' => 'john',
+        'created_ts' => '2018-02-7 11:03:22',
+        'status' => 'closed',
+        'assignee' => 'steve',
+        'tags' => 'sql',
+        'id' => 3
+    );
+    $issues[] = array(
+        'title' => 'Test three issue created p2',
+        'description' => 'test hellow world description test hellow world description test hellow world description test hellow world description test hellow world description',
+        'author' => 'john',
+        'created_ts' => '2018-02-7 11:03:22',
+        'status' => 'closed',
+        'assignee' => 'steve',
+        'tags' => 'sql',
+        'id' => 3
+    );
+    $issues[] = array(
+        'title' => 'Test three issue created',
+        'description' => 'test hellow world description test hellow world description test hellow world description test hellow world description test hellow world description',
+        'author' => 'john',
+        'created_ts' => '2018-02-7 11:03:22',
+        'status' => 'open',
+        'assignee' => 'steve',
+        'tags' => 'sql',
+        'id' => 3
+    );
+    $issues[] = array(
+        'title' => 'Test three issue created',
+        'description' => 'test hellow world description test hellow world description test hellow world description test hellow world description test hellow world description',
+        'author' => 'john',
+        'created_ts' => '2018-02-7 11:03:22',
+        'status' => 'closed',
+        'assignee' => 'steve',
+        'tags' => 'sql',
+        'id' => 3
+    );
+    $issues[] = array(
+        'title' => 'Test three issue created p3',
+        'description' => 'test hellow world description test hellow world description test hellow world description test hellow world description test hellow world description',
+        'author' => 'john',
+        'created_ts' => '2018-02-7 11:03:22',
+        'status' => 'open',
+        'assignee' => 'steve',
+        'tags' => 'sql',
+        'id' => 3
+    );
+    $issues[] = array(
+        'title' => 'Test three issue created',
+        'description' => 'test hellow world description test hellow world description test hellow world description test hellow world description test hellow world description',
+        'author' => 'john',
+        'created_ts' => '2018-02-7 11:03:22',
+        'status' => 'closed',
+        'assignee' => 'steve',
+        'tags' => 'sql',
+        'id' => 3
+    );
+    $issues[] = array(
+        'title' => 'Test three issue created',
+        'description' => 'test hellow world description test hellow world description test hellow world description test hellow world description test hellow world description',
+        'author' => 'john',
+        'created_ts' => '2018-02-7 11:03:22',
+        'status' => 'open',
+        'assignee' => 'steve',
+        'tags' => 'sql',
+        'id' => 3
+    );
+    $issues[] = array(
+        'title' => 'Test three issue created p4',
+        'description' => 'test hellow world description test hellow world description test hellow world description test hellow world description test hellow world description',
+        'author' => 'john',
+        'created_ts' => '2018-02-7 11:03:22',
+        'status' => 'open',
+        'assignee' => 'steve',
+        'tags' => 'sql',
+        'id' => 3
+    );
+    
+    
+    $st_index=($limit*$page)-$limit;
+    $end_index=$limit;
+        
+    $data=array_slice($issues,$st_index,$end_index);
+
+    $total_rows=count($issues);
+    $total_pages=  ceil($total_rows/$limit);
+    
+    return array('pages'=>$total_pages,'data'=>$data);
+}
 
 function getImagesarray($data) {
     $arr_result = NULL;

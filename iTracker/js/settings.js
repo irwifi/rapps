@@ -1,17 +1,17 @@
 if ( window.location.hostname === "localhost" ) {
-    window.site_root_url = "//localhost/p/Work/issue_tracker2/";
+    window.site_root_url = "//localhost/p/Work/iTracker/src/";
 
     window.ITsettings = {
-        'fetch_issues_list_url': '//localhost/p/Work/issue_tracker2/ajax_api.php?action=getissuesdata',
-        'create_issue_url': '//localhost/p/Work/issue_tracker2/ajax_api.php',
-        'edit_issue_url': '//localhost/p/Work/issue_tracker2/ajax_api.php',
-        'delete_issue_url': '//localhost/p/Work/issue_tracker2/ajax_api.php',
-        'comment_add_url': '//localhost/p/Work/issue_tracker2/ajax_api.php',
-        'fetch_issue_url': '//localhost/p/Work/issue_tracker2/ajax_api.php',
-        'fetch_assign_to_list': '//localhost/p/Work/issue_tracker2/ajax_api.php',
-        'set_issue_assignto_url': '//localhost/p/Work/issue_tracker2/ajax_api.php',
-        'close_issue_url': '//localhost/p/Work/issue_tracker2/ajax_api.php',
-        'reopen_issue_url': '//localhost/p/Work/issue_tracker2/ajax_api.php'
+        'fetch_issues_list_url': '//localhost/p/Work/iTracker/src/ajax_api.php?action=getissuesdata',
+        'create_issue_url': '//localhost/p/Work/iTracker/src/ajax_api.php',
+        'edit_issue_url': '//localhost/p/Work/iTracker/src/ajax_api.php',
+        'delete_issue_url': '//localhost/p/Work/iTracker/src/ajax_api.php',
+        'comment_add_url': '//localhost/p/Work/iTracker/src/ajax_api.php',
+        'fetch_issue_url': '//localhost/p/Work/iTracker/src/ajax_api.php',
+        'fetch_assign_to_list': '//localhost/p/Work/iTracker/src/ajax_api.php',
+        'set_issue_assignto_url': '//localhost/p/Work/iTracker/src/ajax_api.php',
+        'close_issue_url': '//localhost/p/Work/iTracker/src/ajax_api.php',
+        'reopen_issue_url': '//localhost/p/Work/iTracker/src/ajax_api.php'
     };
 } else {
     window.site_root_url = "http://rapps.herokuapp.com/iTracker/";

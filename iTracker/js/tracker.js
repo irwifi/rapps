@@ -1,3 +1,4 @@
+
 function validateissuecreateform(form) {
     var fields = $(form).serializeArray();
 
@@ -23,8 +24,8 @@ function validateissuecreateform(form) {
         imageUploader.clearImageCollection();
         console.log(data);
         var item = generateIssueJson(fields);
-        window.total_issues_count=window.total_issues_count?window.total_issues_count:1;
-        addIssueToDom(item,window.total_issues_count);
+        window.total_issues_count = window.total_issues_count ? window.total_issues_count : 1;
+        addIssueToDom(item, window.total_issues_count);
         window.total_issues_count++;
         $('#newIssuePopup').modal('hide');
     };
@@ -38,6 +39,24 @@ function validateissuecreateform(form) {
         contentType: false
     };
     AjaxController.SendAjaxRequest(data, 'POST', 'json', url, success, error, null, prop);
+
+    return false;
+}
+
+function validatesearchissueform(form) {
+    var fields = $(form).serializeArray();
+
+    var success = function (data) {
+        form.reset();
+        //enable this function and make sure your data is correct
+        //displayIssuesList(data);
+    };
+    var error = function (data) {
+        console.log(data);
+    };
+    var url = window.ITsettings.search_issue_url;
+    var data = fields;
+    AjaxController.SendAjaxRequest(data, 'POST', 'json', url, success, error);
 
     return false;
 }
@@ -82,8 +101,7 @@ function validateaddcommentform(form) {
 
 function validatechangeissueassignee(form) {
     var fields = $(form).serializeArray();
-    console.log(fields);
-
+    
     var success = function (data) {
         $('#assignToPopup').modal('hide');
     };
@@ -91,6 +109,38 @@ function validatechangeissueassignee(form) {
         console.log(data);
     };
     var url = window.ITsettings.set_issue_assignto_url;
+    var data = fields;
+    AjaxController.SendAjaxRequest(data, 'POST', 'json', url, success, error);
+
+    return false;
+}
+
+function validatecloseissue(form) {
+    var fields = $(form).serializeArray();
+    
+    var success = function (data) {
+        $('#closePopup').modal('hide');
+    };
+    var error = function (data) {
+        console.log(data);
+    };
+    var url = window.ITsettings.close_issue_url;
+    var data = fields;
+    AjaxController.SendAjaxRequest(data, 'POST', 'json', url, success, error);
+
+    return false;
+}
+
+function validatereopenissue(form){
+    var fields = $(form).serializeArray();
+    
+    var success = function (data) {
+        $('#reopenPopup').modal('hide');
+    };
+    var error = function (data) {
+        console.log(data);
+    };
+    var url = window.ITsettings.reopen_issue_url;
     var data = fields;
     AjaxController.SendAjaxRequest(data, 'POST', 'json', url, success, error);
 
@@ -109,6 +159,7 @@ function addIssueToDom(item, count) {
                 + '<td>' + item.author + '</td>'
                 + '<td>' + item.tags + '</td>'
                 + '<td>' + item.assignee + '</td>'
+                + '<td>' + item.status + '</td>'
                 + '<td><img data-id="' + item.id + '" class="pull-right deleteIssue" src="images/delete_icon.png" title="delete"/>  <img data-id="' + item.id + '" class="pull-right editIssue" src="images/edit_icon.png" title="edit"/> </td>'
                 + ' </tr>');
     }
@@ -127,7 +178,7 @@ function generateIssueJson(data) {
         }
     }
     json.id = getIDTemp();
-    json.created_ts = 'yyyy-mm-dd H:i:s';
+    json.created_ts = json.date ? json.date : 'yyyy-mm-dd H:i:s';
     return json;
 }
 
@@ -173,12 +224,10 @@ function updateIssuesData(id, data) {
 function addCommentToDom(data) {
     $('#commentsSection').append('<div class="panel panel-white post panel-shadow">'
             + '<div class="post-heading">'
-            + '<div class="pull-left image">'
-            + '<img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">'
-            + '</div>'
+
             + '<div class="pull-left meta">'
             + '<div class="title h5">'
-            + '<a href="#"><b>' + data.author + '</b></a> made a comment'
+            + '<a href="#"><b>' + data.author + '</b></a> made a comment on ' + data.created_ts
 
             + '</div>'
             + '</div>'
@@ -219,27 +268,13 @@ function closeIssue(id) {
     AjaxController.SendAjaxRequest(data, 'POST', 'json', url, success, error);
 }
 
-function reopenIssue(id) {
-    var success = function (data) {
-        getIssueApiData(id);
-    };
-    var error = function (data) {
-        console.log(data);
-    };
-    var url = window.ITsettings.reopen_issue_url;
-    var data = {
-        id: id,
-        'by': window.userloggedin
-    };
-    AjaxController.SendAjaxRequest(data, 'POST', 'json', url, success, error);
-}
 
 function getIssuesList(page) {
     page = page ? page : 1;
 
     $('#issuesList').empty();
     $('#issuesList').append('<tbody><tr>'
-            + '<th>No.</th><th>Title</th><th>Created Date</th><th>Posted by</th><th>Tags</th><th>Assigned To</th><th>Action</th>'
+            + '<th>No.</th><th>Title</th><th>Create On</th><th>Posted by</th><th>Tags</th><th>Assigned To</th><th>Status</th><th>Action</th>'
             + '</tr></tbody>');
     var success = function (data) {
         window.issues = data.issues;
@@ -302,12 +337,17 @@ function getIssueApiData(id) {
 function generateStatusActionButtons(status) {
     var str = "";
     if (status === 'open') {
-        str += '<button class="btn btn-default issuestatusBtns btn-sm" data-type="close">Close</button>';
+//        str += '<button class="btn btn-default issuestatusBtns btn-sm" data-type="close">Close</button>';
         str += '<button class="btn btn-default issuestatusBtns btn-sm" data-type="assign">Assign</button>';
     }
     else if (status === 'closed') {
-        str += '<button class="btn btn-default issuestatusBtns btn-sm" data-type="reopen">Reopen</button>';
-        str += '<button class="btn btn-default issuestatusBtns btn-sm" data-type="assign">Assign</button>';
+        str += '<button class="btn btn-default issuestatusBtns btn-sm" data-type="reopen">Reopen</button>';        
+    }
+    else if (status === 'reopened') {
+        str += '<button class="btn btn-default issuestatusBtns btn-sm" data-type="close">Close</button>';        
+    }
+    else if (status === 'assigned') {
+        str += '<button class="btn btn-default issuestatusBtns btn-sm" data-type="close">Close</button>';        
     }
 
     return str;
@@ -349,10 +389,11 @@ function displayIssuesList(data) {
             count++;
         }
     }
-    window.total_issues_count=count;
+    window.total_issues_count = count;
 }
 
 function getAssignToUsersList() {
+    console.log('ss');
     var success = function (data) {
         window.userslist = data;
         $('.assigntolist').empty();
@@ -366,6 +407,9 @@ function getAssignToUsersList() {
                 $('.assigntolist').append('<option value="' + item + '">' + item + ' </option>');
             }
         }
+        
+        sortDropdownlist('#assignee');
+        sortDropdownlist('#assignee_edit');
     };
     var error = function (data) {
         console.log(data);
@@ -375,6 +419,17 @@ function getAssignToUsersList() {
         action: 'getuserslist'
     };
     AjaxController.SendAjaxRequest(data, 'POST', 'json', url, success, error);
+}
+
+function sortDropdownlist(ele) {
+    var sel = $(ele);
+    var selected = sel.val(); // cache selected value, before reordering
+    var opts_list = sel.find('option');
+    opts_list.sort(function (a, b) {
+        return $(a).text() > $(b).text() ? 1 : -1;
+    });
+    sel.html('').append(opts_list);
+    sel.val(selected);
 }
 
 $(document).on('click', '.editIssue', function () {
@@ -409,20 +464,32 @@ $(document).on('click', '.paginationNumb', function () {
 $(document).on('click', '.issuestatusBtns', function () {
     // do something here
     var type = $(this).attr('data-type');
-    if (type === 'assign') {
-        $('.assignToIssueID').val(window.isseuID);
+    $('.assignToIssueID').val(window.isseuID);
+    if (type === 'assign') {        
         $('#assignToPopup').modal('show');
     } else if (type === 'close') {
-        var r = confirm('Are you sure?');
-        if (r) {
-            closeIssue(window.isseuID);
-        }
+        $('#closePopup').modal('show');
     } else if (type == 'reopen') {
-        reopenIssue(window.isseuID);
+        //reopenIssue(window.isseuID);
+        $('#reopenPopup').modal('show');
     }
 });
 
 
+
+$(document).on('click', '#filterBtn', function () {
+    $('#filterBlock').toggle();
+    if ($('#filterBlock').is(":visible")) {
+        $('#filterCaret').removeClass('caret');
+        $('#filterCaret').addClass('caret-up');
+    } else {
+        $('#filterCaret').removeClass('caret-up');
+        $('#filterCaret').addClass('caret');
+    }
+
+});
+
+$('#filterBlock').toggle();
 
 $(document).on('click', '.issueTitle', function () {
     // do something here
@@ -441,10 +508,34 @@ $(document).on('click', '.issueTitle', function () {
         $('#issueDescription').html(data.description);
         $('#issueLink').attr('href', 'issue.php?id=' + id);
 
+        var tags = data.tags;
+        var tags_html = "";
+        if (tags) {
+            var tags_list = tags.split(',');
+            for (var item in tags_list) {
+                item = tags_list[item];
+                if (item) {
+                    tags_html += "<div class='issuetags'>" + item + "</div>";
+                }
+            }
+
+            tags_html = 'Tags: ' + tags_html;
+        }
+
+        $('#issuedetail_statustags').html('<div class="issuestatusText"> ' + data.status + '</div> ' + tags_html);
+
         $('#isseuDetailPopup').modal('show');
     }
 });
 
+$(document).on('hide.bs.modal', '.modal', function () {
+    console.log('popup closed');
+    $('form').trigger("reset");    
+});
 
-window.userloggedin='steve';
+$('select').each(function(){   
+   sortDropdownlist(this);
+});
+
+window.userloggedin = 'steve';
 $('.author').val(window.userloggedin);

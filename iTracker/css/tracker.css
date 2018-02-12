@@ -1,5 +1,6 @@
+
 body{
-    margin:0 auto;
+    margin:0 auto; 
     width: 90%;
 }
 
@@ -60,7 +61,7 @@ th {
 }
 
 .imgThumbnail{
-    width: 150px;
+    width: 150px;    
     margin: 3px;
     border: 1px dotted;
 }
@@ -95,7 +96,7 @@ th {
 }
 
 .post .post-heading {
-  height: 95px;
+  height: 50px;
   padding: 20px 15px;
 }
 .post .post-heading .avatar {
@@ -184,4 +185,46 @@ th {
 
 .issuestatusBtns{
     margin-right: 5px;
+}
+
+#issuedetail_statustags{
+    position: relative;
+    margin-top: 8px;
+    padding: 3px;    
+}
+.issuestatusText{
+    font-weight: bold;
+}
+.issuetags{
+    display: inline-block;
+    margin-left: 6px;
+    padding: 3px;
+    background-color: #c4e3f3;
+    border: 1px solid grey;
+}
+
+.modal-dialog {
+    width: 1100px;
+}
+.filterContainer{
+    background-color: #ddd;
+}
+#filterBtn {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+    background-color: white;
+}
+
+.caret-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid rgba(0, 0, 0, 0);
+    border-right: 4px solid rgba(0, 0, 0, 0);
+    border-bottom: 4px solid;
+    
+    display: inline-block;
+    margin-left: 2px;
+    vertical-align: middle;
 }

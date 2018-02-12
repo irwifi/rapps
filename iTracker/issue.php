@@ -5,23 +5,6 @@ if (!$id) {
     die();
 }
 
-/// Dummy json Data ///
-
-
-//$imagesArray = getImagesarray($issue);
-//
-//function getImagesarray($data) {
-//    $arr_result = NULL;
-//    foreach ($data as $key => $value) {
-//        $exp_key = explode('_', $key);
-//        if ($exp_key[0] == 'image') {
-//            $arr_result[] = $value;
-//        }
-//    }
-//    return $arr_result;
-//}
-
-/////
 $version = time();
 ?>
 
@@ -75,18 +58,22 @@ $version = time();
                 <div class="modal-body">
                     <div class="container-fluid">
 
-                        <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">                                
+                        <div class="col-xs-12 col-sm-12 col-md-12">                                
                             <div id="formdiv">
                                 <form method="post" role="form" onsubmit="return validateaddcommentform(this);">
                                     <fieldset>                                   
 
                                         <div class="form-group">
                                             <label>Comment:</label>
-                                            <textarea name="text" id="text" class="form-control input-lg" placeholder="Enter comment here" required=""></textarea>
+                                            <textarea name="text" rows="5" id="text" class="form-control input-lg" placeholder="Enter comment here" required=""></textarea>
                                         </div>
-
-                                        <input type="hidden" name="author" class="author" value="" />
+                                        <div class="form-group">
+                                            <label>Comment By:</label>
+                                            <input type="text" name="author" id="" class="form-control input-lg" placeholder="Comment By" required="">
+                                        </div>                                         
+                                        
                                         <input type="hidden" name="action" value="addcomment" />
+                                        <input type="hidden" name="date" value="" />
 
                                         <input type="hidden" name="id" value="<?= $id ?>" />
 
@@ -130,7 +117,7 @@ $version = time();
                                     <fieldset>                                   
                                         <div class="form-group">
                                             <label>Assigned By:</label>
-                                            <input type="text" name="assignedby" id="assignedby" class="form-control input-lg" placeholder="Assigned by" readonly="" required="">
+                                            <input type="text" name="assignedby" id="assignedby" class="form-control input-lg" placeholder="Assigned by" required="">
                                         </div>  
                                           <div class="form-group">
                                             <label>Assigned To:</label>
@@ -138,6 +125,88 @@ $version = time();
                                                 
                                             </select>
                                         </div>
+                                        <input type="hidden" name="id" class="assignToIssueID" value="" />
+                                          <div class="form-group">
+                                            <div class="text-center">
+                                                <button class="btn btn-danger" type="submit">Submit</button>
+                                            </div>
+                                        </div>
+
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>                   
+            </div>
+
+        </div>
+    </div>
+     
+        <!-- show close to popup -->
+    <div id="closePopup" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Close Issue</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">                                
+                            <div id="formdiv">
+                                <form method="post" role="form" onsubmit="return validatecloseissue(this);">
+                                    <fieldset>                                   
+                                        <div class="form-group">
+                                            <label>Closed By:</label>
+                                            <input type="text" name="closedby" id="closedby" class="form-control input-lg" placeholder="Closed by" required="">
+                                        </div>  
+                                         
+                                        <input type="hidden" name="id" class="assignToIssueID" value="" />
+                                          <div class="form-group">
+                                            <div class="text-center">
+                                                <button class="btn btn-danger" type="submit">Submit</button>
+                                            </div>
+                                        </div>
+
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>                   
+            </div>
+
+        </div>
+    </div>
+        
+          <!-- show close to popup -->
+    <div id="reopenPopup" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Reopen Issue</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+
+                        <div class="col-xs-12 col-sm-8 col-md-8 col-sm-offset-2 col-md-offset-2">                                
+                            <div id="formdiv">
+                                <form method="post" role="form" onsubmit="return validatereopenissue(this);">
+                                    <fieldset>                                   
+                                        <div class="form-group">
+                                            <label>Reopened By:</label>
+                                            <input type="text" name="reopenedby" id="reopenedby" class="form-control input-lg" placeholder="Reopened by" required="">
+                                        </div>  
+                                         
                                         <input type="hidden" name="id" class="assignToIssueID" value="" />
                                           <div class="form-group">
                                             <div class="text-center">
