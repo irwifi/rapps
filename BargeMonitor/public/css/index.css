@@ -1,0 +1,274 @@
+/* Global ====================================== START */
+  * {
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .container-fluid {
+    padding: 0;
+  }
+
+  .barge_main_body {
+    /*width: 1300px;*/
+    margin: 15px auto;
+    margin-top: 60px;
+  }
+
+  .barge_loading_overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #FFF;
+    z-index: 2000;
+  }
+
+  .barge_loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 2001;
+    margin: -110px 0 0 -78px;
+  }
+/* Global ====================================== END */
+
+/* Quick Sidebar ====================================== START */
+  .barge_qs_title {
+    font-weight: bold;
+    color: #EEE;
+    cursor: pointer;
+    text-align: center;
+    padding: 6px 8px;
+  }
+
+  .barge_qs_title + ul {
+    list-style: none;
+    display: none;
+    margin-top: 6px;
+  }
+
+  .barge_qs_label {
+    display: inline-block;
+    width: 120px;
+  }
+
+  .barge_qs_label + span, .barge_qs_value {
+    color: #EFEFEF;
+  }
+
+ #barge_qs_data_toggle, #barge_qs_data_kml {
+    text-align: center;
+    padding-right: 40px;
+  }
+
+  .barge_qs_title + ul button {
+    margin: 8px auto;
+    width: 120px;
+  }
+/* Quick Sidebar ====================================== END */
+
+/* Header ====================================== START */
+  .page-bar .page-toolbar {
+    float: none;
+    width: 100%;
+  }
+
+  .barge_info_name {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .barge_info_name span {
+    display: inline-block;
+  }
+
+  .barge_info_name .barge_info_name_val {
+    font-weight: bold;
+    color: #424242;
+    font-size: 26px;
+  }
+
+  .barge_info_name .barge_info_id {
+    font-size: 18px;
+  }
+
+  .barge_info_name .barge_info_timestamp {
+    font-size: 13px;
+    color: #62a9d4;
+  }
+/* Header ====================================== END */
+
+/* Barge Info ====================================== START */
+  .portlet-sortable.light.bg-inverse {
+    border: 1px solid #c0e2ff;
+  }
+
+  .barge_info_portlet .portlet-body span {
+    display: inline-block;
+    width: 100px;
+    font-weight: normal;
+  }
+
+  .barge_info_portlet .portlet-body div {
+    font-weight: bold;
+    width: 200px;
+    margin: auto;
+  }
+
+  .portlet>.portlet-title {
+    margin-bottom: 0px;
+  }
+
+  .portlet.light .portlet-body {
+      padding-top: 0px;
+  }
+
+  @media (max-width: 991px) {
+    .portlet-sortable-empty {
+      height: 10px;
+    }
+
+    .portlet {
+      margin-bottom: 6px;
+    }
+  }
+/* Barge Info ====================================== END */
+
+/* Barge Config ====================================== START */
+  .barge_config_portlet .portlet-body {
+    width: fit-content;
+    margin: auto;
+  }
+
+  .barge_config_portlet .portlet_server, .barge_config_portlet .portlet_box {
+    display: inline-block;
+    width: 160px;
+    text-align: center;
+  }
+
+  .barge_config_portlet .portlet_header span {
+    font-weight: bold;
+  }
+
+  .barge_config_portlet .portlet_header .portlet_server {
+    margin-left: 130px;
+  }
+
+  .barge_config_portlet .portlet_group {
+    margin-top: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #b0b1b5;
+    padding-left: 30px;
+  }
+
+  .barge_config_portlet .portlet_group:last-of-type {
+    border-bottom: none;
+  }
+
+  .barge_config_portlet .portlet_group_name {
+    font-weight: bold;
+  }
+
+  .barge_config_portlet .portlet_non_btc {
+    display: none;
+  }
+
+  .barge_config_portlet .portlet_item {
+    margin-bottom: 5px;
+  }
+
+  .barge_config_portlet .portlet_item span {
+    display: inline-block;
+    width: 160px;
+  }
+
+  .barge_config_portlet .portlet_item .portlet_title {
+    width: 100px;
+  }
+
+  .barge_config_portlet input, .barge_config_portlet select {
+    width: 60px;
+    height: 25px;
+    border: 1px solid #c5c6ca;
+  }
+
+  .barge_config_portlet button {
+    border: 1px solid #c5c6ca;
+  }
+
+  .barge_config_portlet .barge_config_invert {
+    width:80px;
+  }
+
+  .input-group .form-control.touchspin {
+    width: 60px;
+  }
+
+  .barge_config_portlet .portlet_item span.input-group-btn-vertical {
+    width: 20px;
+  }
+
+  .input-group.bootstrap-touchspin {
+    display: inline-flex;
+  }
+
+  .bootstrap-touchspin-up, .bootstrap-touchspin-down {
+    display: block;
+    padding: 0 2px;
+    font-size: 8px;
+    height: 12px;
+    margin-bottom: 1px;
+  }
+
+  .bootstrap-touchspin-up i, .bootstrap-touchspin-down i {
+    margin-top: -2px;
+  }
+
+  @media (max-width: 1325px) {
+    .barge_config_portlet .portlet_item span, .barge_config_portlet .portlet_server, .barge_config_portlet .portlet_box {
+      width: 120px;
+    }
+  }
+
+  @media (min-width: 450px) {
+    .barge_config_portlet {
+      min-width: 450px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    .barge_config_portlet {
+      padding: 0;
+    }
+
+    .barge_config_portlet .portlet_header .portlet_server {
+      margin-left: 0;
+    }
+
+    .barge_config_portlet .portlet_group {
+      padding-left: 0;
+    }
+
+    .barge_config_portlet .portlet_group {
+      margin-left: 0;
+    }
+
+    .barge_config_portlet .portlet_item .portlet_title {
+      display: block;
+      text-align: center;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+
+    .barge_config_portlet .portlet.light {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+
+    .barge_config_portlet .portlet.light .portlet-body {
+      margin: 0 auto;
+    }
+  }
+/* Barge Config ====================================== END */
