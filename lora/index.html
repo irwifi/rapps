@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head lang="de">
+	<meta charset="utf-8">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<title>interaktive Bildzeichen</title>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans">
+	<link rel="stylesheet" href="statics/css/style.css" />
+	<link rel="stylesheet" href="statics/css/index.css" />
+</head>
+
+<body>
+	<div class="desktop">
+		<div class="container">
+			<div class="item a">
+				<a href="index.htm">
+					<img class="le" src="statics/img/left.png">
+				</a>
+				<p class="click">Übersicht</p>
+			</div>
+			<div class="item b">
+				<p class="head">Prototyp 2: interaktive Bildzeichen</p>
+			</div>
+			<div class="item c">
+				<p class="click">Prototyp 3</p>
+				<a href="animation.htm">
+					<img class="ri" src="statics/img/right.png">
+				</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="clearfix">
+		<div class="column main">
+			<!--SCHMERZTYPEN-->
+			<div class="kategorien">
+				<div class="kategorientitel">
+					<h5>Beschwerden</h5>
+				</div>
+				<div id="schmerz" class="doodad"></div>
+				<div id="zickzack" class="doodad"></div>
+				<div id="radial" class="doodad"></div>
+				<div id="ausschlag" class="doodad"></div>
+				<div id="schweif" class="doodad"></div>
+				<div id="vomit" class="doodad"></div>
+				<div id="kalt" class="doodad"></div>
+				<div id="zittern1" class="doodad"></div>
+				<div id="zittern2" class="doodad"></div>
+				<div id="heiss" class="doodad"></div>
+				<div id="wunde" class="doodad"></div>
+				<div id="kratz" class="doodad"></div>
+				<div id="bluttropfen" class="doodad"></div>
+				<div id="wassertropfen" class="doodad"></div>
+				<div id="husten2" class="doodad"></div>
+				<div id="dizzy" class="doodad"></div>
+				<div id="wellen" class="doodad"></div>
+				<div id="luft" class="doodad"></div>
+				<div id="schlafen" class="doodad"></div>
+			</div>
+			<!--MEDIKATION-->
+			<div class="kategorien">
+				<div class="kategorientitel">
+					<h5>Medikation</h5>
+				</div>
+				<div id="fiebermesseri" class="doodad"></div>
+				<div id="hustensirup" class="doodad"></div>
+				<div id="tabletten" class="doodad"></div>
+				<div id="salbe" class="doodad"></div>
+				<div id="spritze" class="doodad"></div>
+				<div id="asthma" class="doodad"></div>
+				<div id="allemedis" class="doodad"></div>
+			</div>
+			<!--ZEIT-->
+			<div class="kategorien">
+				<div class="kategorientitel">
+					<h5>Zeitabfragen</h5>
+				</div>
+				<div id="kalenderi" class="doodad"></div>
+				<div id="gelb" class="doodad"></div>
+				<div id="uhr" class="doodad"></div>
+				<div id="uhrdigital" class="doodad"></div>
+			</div>
+			<!--EMOTIONEN-->
+			<div class="kategorien">
+				<div class="kategorientitel">
+					<h5>Antworten</h5>
+				</div>
+				<div id="ok1" class="doodad"></div>
+				<div id="ok2" class="doodad"></div>
+				<div id="notok" class="doodad"></div>
+				<div id="checki" class="doodad"></div>
+				<div id="x" class="doodad"></div>
+				<div id="xrot" class="doodad"></div>
+				<div id="happy" class="doodad"></div>
+				<div id="sad" class="doodad"></div>
+				<div id="fragezeichen" class="doodad"></div>
+				<div id="ausrufezeichen" class="doodad"></div>
+			</div>
+			<!--SONSTIGES-->
+			<div class="kategorien">
+				<div class="kategorientitel">
+					<h5>Sonstiges</h5>
+				</div>
+				<div id="geburtstag" class="doodad"></div>
+				<div id="namei" class="doodad"></div>
+				<div id="baby" class="doodad"></div>
+				<div id="toilette" class="doodad"></div>
+				<div id="food" class="doodad"></div>
+				<div id="drinks" class="doodad"></div>
+			</div>
+			<!--ZAHLEN-->
+			<div class="kategorien">
+				<div class="kategorientitel">
+					<h5>Zahlen</h5>
+				</div>
+				<div id="null" class="doodad"></div>
+				<div id="eins" class="doodad"></div>
+				<div id="zwei" class="doodad"></div>
+				<div id="drei" class="doodad"></div>
+				<div id="vier" class="doodad"></div>
+				<div id="fuenf" class="doodad"></div>
+				<div id="sechs" class="doodad"></div>
+				<div id="sieben" class="doodad"></div>
+				<div id="acht" class="doodad"></div>
+				<div id="neun" class="doodad"></div>
+				<div id="number" class="doodad"></div>
+				<div id="mal" class="doodad"></div>
+				<div id="pfeil_r" class="doodad"></div>
+				<div id="pfeil_l" class="doodad"></div>
+				<div id="pfeil_o" class="doodad"></div>
+				<div id="pfeil_u" class="doodad"></div>
+				<div id="minus" class="doodad"></div>
+				<div id="plus" class="doodad"></div>
+			</div>
+		</div>
+
+		<div class="column feld">
+			<div id="elements" viewbox="200 0 200 200" class="box3">
+			</div>
+			<div id="rotate-area">
+				<div id="human" viewbox="200 0 100 100" class="box2">
+				</div>
+			</div>
+			<button class="button buttonklein" onClick="location.href=location.href">
+				<h4>nochmal beginnen</h4>
+			</button>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="statics/js/interact.min.js"></script>
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.9/interact.min.js"></script> -->
+	<script type="text/javascript" src="statics/js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="statics/js/jquery.ui.touch-punch.min.js"></script>
+	<script type="text/javascript" src="statics/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="statics/js/index.js"></script>
+</body>
+</html>

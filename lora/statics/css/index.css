@@ -1,0 +1,901 @@
+#human {
+	display: block;
+	position: relative;
+	background-image: url(../../statics/img/human.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	height: 300px;
+	width: 500px;
+	cursor: pointer;
+	margin: 10px;
+	margin-top: -500px;
+	background-color: transparent;
+	z-index: -1;
+	/*border: 1px solid black;*/
+}
+
+#human.reset {
+	transition: -webkit-transform 0.3s ease-in-out;
+	transition: transform 0.3s ease-in-out;
+}
+/*SCHMERZEN*/
+
+#schmerz {
+	position: relative;
+	background-image: url(../../statics/img/schmerz.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#zickzack {
+	position: relative;
+	background-image: url(../../statics/img/zickzack.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#radial {
+	position: relative;
+	background-image: url(../../statics/img/radial.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#schweif {
+	position: relative;
+	background-image: url(../../statics/img/schweif.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#ausschlag {
+	position: relative;
+	background-image: url(../../statics/img/ausschlag.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#vomit {
+	position: relative;
+	background-image: url(../../statics/img/vomit.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#heiss {
+	position: relative;
+	background-image: url(../../statics/img/heiss.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#kalt {
+	position: relative;
+	background-image: url(../../statics/img/kalt.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#wunde {
+	position: relative;
+	background-image: url(../../statics/img/wunde.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#bluttropfen {
+	position: relative;
+	background-image: url(../../statics/img/bluttropfen.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#wassertropfen {
+	position: relative;
+	background-image: url(../../statics/img/wassertropfen.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#husten1 {
+	position: relative;
+	background-image: url(../../statics/img/husten1.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#husten2 {
+	position: relative;
+	background-image: url(../../statics/img/husten2.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#dizzy {
+	position: relative;
+	background-image: url(../../statics/img/dizzy.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#kratz {
+	position: relative;
+	background-image: url(../../statics/img/kratz.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#wellen {
+	position: relative;
+	background-image: url(../../statics/img/wellen.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#luft {
+	position: relative;
+	background-image: url(../../statics/img/luft.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#zittern1 {
+	position: relative;
+	background-image: url(../../statics/img/zittern1.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#zittern2 {
+	position: relative;
+	background-image: url(../../statics/img/zittern2.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#schlafen {
+	position: relative;
+	background-image: url(../../statics/img/schlafen.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+/*MEDIKATION*/
+
+#fiebermesseri {
+	position: relative;
+	background-image: url(../../statics/img/fiebermesseri.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#hustensirup {
+	position: relative;
+	background-image: url(../../statics/img/hustensirup.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#tabletten {
+	position: relative;
+	background-image: url(../../statics/img/tabletten.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#salbe {
+	position: relative;
+	background-image: url(../../statics/img/salbe.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#spritze {
+	position: relative;
+	background-image: url(../../statics/img/spritze.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#asthma {
+	position: relative;
+	background-image: url(../../statics/img/asthma.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#allemedis {
+	position: relative;
+	background-image: url(../../statics/img/allemedis.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+/*ZEIT*/
+
+#kalenderi {
+	position: relative;
+	background-image: url(../../statics/img/kalenderi.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 60px;
+	height: 60px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#gelb {
+	position: relative;
+	background-image: url(../../statics/img/gelb.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#uhr {
+	position: relative;
+	background-image: url(../../statics/img/uhr.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 45px;
+	height: 45px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#uhrdigital {
+	position: relative;
+	background-image: url(../../statics/img/uhrdigital.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 45px;
+	height: 45px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+/*EMOTIONEN*/
+
+#ok1 {
+	position: relative;
+	background-image: url(../../statics/img/ok1.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#ok2 {
+	position: relative;
+	background-image: url(../../statics/img/ok2.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#notok {
+	position: relative;
+	background-image: url(../../statics/img/notok.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#checki {
+	position: relative;
+	background-image: url(../../statics/img/checki.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#x {
+	position: relative;
+	background-image: url(../../statics/img/x.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#xrot {
+	position: relative;
+	background-image: url(../../statics/img/xrot.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#happy {
+	position: relative;
+	background-image: url(../../statics/img/happy.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#sad {
+	position: relative;
+	background-image: url(../../statics/img/sad.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#fragezeichen {
+	position: relative;
+	background-image: url(../../statics/img/fragezeichen.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#ausrufezeichen {
+	position: relative;
+	background-image: url(../../statics/img/ausrufezeichen.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+/*SONSTIGES*/
+
+#geburtstag {
+	position: relative;
+	background-image: url(../../statics/img/geburtstag.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#baby {
+	position: relative;
+	background-image: url(../../statics/img/baby.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#namei {
+	position: relative;
+	background-image: url(../../statics/img/namei.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#toilette {
+	position: relative;
+	background-image: url(../../statics/img/toilette.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#food {
+	position: relative;
+	background-image: url(../../statics/img/food.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#drinks {
+	position: relative;
+	background-image: url(../../statics/img/drinks.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 38px;
+	height: 38px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+/*ZAHLEN*/
+
+#null {
+	position: relative;
+	background-image: url(../../statics/img/null.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#eins {
+	position: relative;
+	background-image: url(../../statics/img/eins.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#zwei {
+	position: relative;
+	background-image: url(../../statics/img/zwei.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#drei {
+	position: relative;
+	background-image: url(../../statics/img/drei.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#vier {
+	position: relative;
+	background-image: url(../../statics/img/vier.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#fuenf {
+	position: relative;
+	background-image: url(../../statics/img/fuenf.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#sechs {
+	position: relative;
+	background-image: url(../../statics/img/sechs.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#sieben {
+	position: relative;
+	background-image: url(../../statics/img/sieben.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#acht {
+	position: relative;
+	background-image: url(../../statics/img/acht.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#neun {
+	position: relative;
+	background-image: url(../../statics/img/neun.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#mal {
+	position: relative;
+	background-image: url(../../statics/img/mal.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#number {
+	position: relative;
+	background-image: url(../../statics/img/number.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#pfeil_r {
+	position: relative;
+	background-image: url(../../statics/img/pfeil_r.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#pfeil_l {
+	position: relative;
+	background-image: url(../../statics/img/pfeil_l.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#pfeil_o {
+	position: relative;
+	background-image: url(../../statics/img/pfeil_o.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#pfeil_u {
+	position: relative;
+	background-image: url(../../statics/img/pfeil_u.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#minus {
+	position: relative;
+	background-image: url(../../statics/img/minus.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+#plus {
+	position: relative;
+	background-image: url(../../statics/img/plus.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+	/*border: 1px solid black;*/
+}
+
+
+.doodad {
+	display: inline-block;
+	position: absolute;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-top: 50px;
+	border: none;
+	background-color: transparent;
+	/*box-shadow: 0px 3px 5px 0px rgba(180,180,180,1);*/
+}
+
+.box2 {
+	width: 80%;
+	/*border: solid 1px;*/
+	height: 500px;
+	margin-top: 45px;
+	background-color: transparent;
+}
+
+.kategorien {
+	/*border-bottom: 2px dotted black;*/
+}
+
+button {
+	margin: 5pt 5pt 0 0;
+}
