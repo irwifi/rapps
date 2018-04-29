@@ -1,8 +1,6 @@
 $( document ).ready( function( ) {
 	$( ".doodad" ).draggable( {
-		helper: function() {
-			return $(this).clone();
-		}
+		helper: "clone"
 	} );
 
 	$( ".box3" ).droppable( {
