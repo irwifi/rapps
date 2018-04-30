@@ -8,7 +8,7 @@
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans">
 	<link rel="stylesheet" href="statics/css/style.css" />
-	<link rel="stylesheet" href="statics/css/index.css" />
+	<link rel="stylesheet" href="statics/css/interaktion.css" />
 </head>
 
 <body>
@@ -143,10 +143,21 @@
 				<div id="human" viewbox="200 0 100 100" class="box2">
 				</div>
 			</div>
+            <div class="slidecontainer">
+            <h6>Schmerzskala</h6>
+            <div class="slidecontainer">
+                <input type="range" min="1" max="10" value="5" class="slider" id="myRange">
+                    <h6>1</h6>
+                <div class="numbers">
+                    <h6>10</h6>
+                </div>
+                <h2>Schmerzlevel: <span id="demo" style="font-weight=bold"></span></h2>
+            </div>
 			<button class="button buttonklein" onClick="location.href=location.href">
 				<h4>nochmal beginnen</h4>
 			</button>
 		</div>
+        </div>    
 	</div>
 
 	<script type="text/javascript" src="statics/js/jquery-3.3.1.js"></script>
@@ -154,6 +165,7 @@
 	<script type="text/javascript" src="statics/js/jquery.ui.touch-punch.min.js"></script>
 	<script type="text/javascript" src="statics/js/interact.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.9/interact.min.js"></script>
-	<script type="text/javascript" src="statics/js/index.js"></script>
+	<script type="text/javascript" src="statics/js/interaktion.js"></script>
+    <script type="text/javascript" src="statics/js/slider.js"></script>
 </body>
 </html>

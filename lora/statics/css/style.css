@@ -1,10 +1,10 @@
 /*
 ** Styles used in the jQuery Essential Training course materials
 */
+
 body {
     font-family: 'IBM Plex Sans', sans-serif;
 }
-
 
 h1 {
     font-family: 'IBM Plex Sans', sans-serif;
@@ -29,7 +29,6 @@ h2 {
     margin-bottom: 8px;
 }
 
-
 h3 {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 20px;
@@ -48,7 +47,7 @@ h4 {
     letter-spacing: 0;
     text-align: center;
     font-weight: normal;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 h5 {
@@ -80,14 +79,14 @@ h6 {
     background-color: #e6e6e6;
     position: fixed;
     top: 0;
-    left:0;
+    left: 0;
     width: 100%;
     display: block;
     z-index: 1;
 }
 
 .column {
-    float:left;
+    float: left;
 }
 
 .clearfix::after {
@@ -96,7 +95,6 @@ h6 {
     display: table;
 }
 
-
 .main {
     width: 32%;
     margin-top: 32px;
@@ -104,18 +102,15 @@ h6 {
     /*border: 1px solid;*/
 }
 
-
 .feld {
     margin-top: 50px;
     margin-left: 35%;
-    padding-left:   10px;
+    padding-left: 10px;
     width: 70%;
-    position:fixed;
+    position: fixed;
     height: 100%;
     background-color: transparent;
 }
-
-
 
 .box2 {
     /*width: 80%;
@@ -126,7 +121,6 @@ h6 {
     margin-top: 45px;
     background-color: white;
     z-index: 0;
-            
 }
 
 .box3 {
@@ -135,14 +129,14 @@ h6 {
     padding-left: 10pt;
     padding-right: 10pt;
     min-height: 500px;
-    width:100%;
+    width: 100%;
     background-color: transparent;
     z-index: 1;
-            
 }
 
 .button {
-    background-color: white; /* Green */
+    background-color: white;
+    /* Green */
     border: 2px solid black;
     color: white;
     text-decoration: none;
@@ -152,136 +146,158 @@ h6 {
     position: center;
     height: 175px;
     display: block;
-    float:left;
+    float: left;
 }
 
 .btn-group .button:not(:last-child) {
-    border-bottom: none /* Prevent double borders */
+    border-bottom: none/* Prevent double borders */
 }
 
 .btn-group .button:hover {
     background-color: black;
 }
 
-.buttonklein{
+.buttonklein {
     border: 1px solid black;
     padding-left: 15px;
     padding-right: 15px;
-    width:150px;
+    width: 150px;
     height: 50px;
     float: left;
     margin-top: 75px;
 }
 
-.buttonhome{
+.buttonhome {
     border: 1px solid black;
     padding-left: 15px;
     padding-right: 15px;
-    width:80px;
-    height:50px;
+    width: 80px;
+    height: 50px;
     float: left;
     margin-top: 75px;
 }
 
-.buttonkombi{
+.buttonkombi {
     border: 1px solid black;
     padding-left: 15px;
     padding-right: 15px;
-    width:80px;
+    width: 80px;
     height: 20px;
     float: right;
     margin-top: 300px;
 }
 
-.kategorientitel{
+.kategorientitel {
     height: 20px;
     background-color: #000000;
     top: 30px;
-    left:0;
+    left: 0;
     width: 98%;
-    display:  block;
+    display: block;
+}
+
+.item {
+    height: 40px;
+}
+
+.black {
+    background-color: #000;
+}
+
+.subhead {
+    font-size: 20px;
+}
+
+.header {
+    font-size: 48px;
+}
+
+.box,
+.item {
+    width: 100%;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    z-index: 1;
+    border-bottom: 1px solid black;
+    background-color: white;
+}
+
+.a,
+.c {
+    width: 20%;
+}
+
+.b {
+    width: 60%;
+}
+
+.a,
+.b,
+.c,
+img.le {
+    position: relative;
+    float: left;
+}
+
+.head {
+    font-size: 14px;
+}
+
+.click {
+    font-size: 12px;
+}
+
+img.ri {
+    float: right;
+    margin-top: -25px;
+    margin-right: 20px;
+}
+
+img.le {
+    margin-top: 14px;
+    margin-left: 20px;
+    margin-right: -40px;
 }
 
 
-
-      .item {
-        height: 40px;
-
-      }
-      .black {
-        background-color: #000;
-      }
-      .subhead {
-        font-size: 20px;
-      }
-        .header {
-            font-size: 48px;
-        }
-     
-      .box, .item {
-        width: 100%;
-        text-align: center;
-
-      }
-      .container {
-        width: 100%;
-        overflow: hidden;
-        position: fixed;
-        top: 0;
-        left:0;
-        width: 100%;
-        display: block;
-        z-index: 1;
-        border-bottom: 1px solid black;
-        background-color: white;
-      }
-        .a, .c {
-            width: 20%;
-        }
-        .b {
-            width: 60%;
-        }
-        .a, .b, .c, img.le {
-            position: relative;
-          float: left;
-        }
-        .head {
-            font-size: 14px;
-        }
-        .click {
-            font-size: 12px;
-        }
-        img.ri {
-            float: right;
-            margin-top: -25px;
-            margin-right: 20px;
-        }
-        img.le {
-            margin-top: 14px;
+        .slider {
+            -webkit-appearance: none;
+            width: 80%;
             margin-left: 20px;
-            margin-right: -40px;
+            margin-top: 20px;
+            height: 15px;
+            background: linear-gradient(to right, green , red);
+            outline: none;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
         }
-        .item {
-            
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 10px;
+            height: 35px;
+            background: #000000;
+            cursor: pointer;
         }
 
-/*
-.index {
-    color: white;
-    border: 2px solid #000000;
-    width:994px;
-    height: 169px;
-    margin-top: 15px; 
-    cursor:pointer;
-}  
-
-
-
-button:hover{
-    background-color: black;
-    
-}*/
-
-
-
-
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+        
+        .numbers{
+            float: right;
+            width: 23%;
+            margin-top: -31px;
+        }
