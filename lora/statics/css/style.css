@@ -271,10 +271,10 @@ img.le {
 
 .slider {
     -webkit-appearance: none;
-    width: 96%;
-    margin-left: 2%;
+    width: 90%;
+    margin-left: 5%;
     margin-top: 20px;
-    height: 15px;
+    height: 25px;
     background: linear-gradient(to right, green , red);
     outline: none;
     -webkit-transition: .2s;
@@ -307,7 +307,7 @@ img.le {
 .action_panel {
     display: none;
     position: fixed;
-    height: 55px;
+    height: 65px;
     width: 100%;
     border-top:  2px solid #F88;
     background:  #efd2d2;
@@ -316,16 +316,16 @@ img.le {
 }
 
 .action_panel .slider_box {
-    margin-right: 70px;
+    margin-right: 108px;
 }
 
 .action_panel .delete {
     position: absolute;
-    width: 30px;
+    width: 36px;
     right: 0;
-    font-size: 36px;
-    margin-top: -41px;
-    padding: 4px 20px;
+    font-size: 42px;
+    margin-top: -52px;
+    padding: 6px 36px;
     background: #F33;
     cursor: pointer;
 }
