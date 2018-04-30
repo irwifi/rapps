@@ -2,7 +2,7 @@ $( document ).ready( function( ) {
 	init_draggable();
 	init_droppable();
 	init_rotation();
-	slider_event();
+	action_event();
 
 	function init_draggable() {
 		$( ".doodad" ).draggable( {
@@ -30,17 +30,30 @@ $( document ).ready( function( ) {
 					} );
 				}
 
-				// Reset the slider to default - 5 in scale
-				$("#myRange").val(5);
+				$( this ).append( droppedItem );
 
 				droppedItem.resizable( {
 					containment: ".box3",
 					handles: "all",
 				} );
 
-				$( this ).append( droppedItem );
 				$( droppedItem ).click( function( ) {
-					$( this ).remove( );
+					$(this).on("dblclick", function() {
+						$(this).remove();
+						$(".action_panel").hide();
+					});
+
+					if(!$( this ).hasClass("selected")) {
+						$(".selected").removeClass("selected");
+						$(this).addClass("selected");
+						var element_width = $(".selected").width();
+						if(element_width == 30) {element_width = 27;}
+						$("#myRange").val(element_width/9);
+						$(".action_panel").show();
+					} else {
+						$(this).removeClass("selected");
+						$(".action_panel").hide();
+					}
 				} );
 			}
 		} );
@@ -57,10 +70,15 @@ $( document ).ready( function( ) {
 		} );
 	}
 
-	function slider_event() {
+	function action_event() {
+		$(".action_panel .delete").on("click", function() {
+			$(".doodad.selected").remove();
+			$(".action_panel").hide();
+		});
+
 		$("#myRange").on("input", function(a) {
-			var scale = 10 + $("#myRange").val() * 4;
-			$("#elements .doodad").width(scale).height(scale);
+			var scale = $("#myRange").val() * 9;
+			$(".doodad.selected").width(scale).height(scale);
 		});
 	}
 } );

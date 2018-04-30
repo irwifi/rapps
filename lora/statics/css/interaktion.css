@@ -22,198 +22,63 @@
 /*SCHMERZEN*/
 
 #schmerz {
-	position: relative;
 	background-image: url(../../statics/img/schmerz.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #zickzack {
-	position: relative;
 	background-image: url(../../statics/img/zickzack.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #radial {
-	position: relative;
 	background-image: url(../../statics/img/radial.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #schweif {
-	position: relative;
 	background-image: url(../../statics/img/schweif.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #ausschlag {
-	position: relative;
 	background-image: url(../../statics/img/ausschlag.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #vomit {
-	position: relative;
 	background-image: url(../../statics/img/vomit.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #heiss {
-	position: relative;
 	background-image: url(../../statics/img/heiss.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #kalt {
-	position: relative;
 	background-image: url(../../statics/img/kalt.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #wunde {
-	position: relative;
 	background-image: url(../../statics/img/wunde.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #bluttropfen {
-	position: relative;
 	background-image: url(../../statics/img/bluttropfen.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #wassertropfen {
-	position: relative;
 	background-image: url(../../statics/img/wassertropfen.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #husten1 {
-	position: relative;
 	background-image: url(../../statics/img/husten1.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #husten2 {
-	position: relative;
 	background-image: url(../../statics/img/husten2.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #dizzy {
-	position: relative;
 	background-image: url(../../statics/img/dizzy.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #kratz {
-	position: relative;
 	background-image: url(../../statics/img/kratz.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #wellen {
@@ -871,7 +736,6 @@
 	/*border: 1px solid black;*/
 }
 
-
 .doodad {
 	display: inline-block;
 	position: absolute;
@@ -882,6 +746,15 @@
 	border: none;
 	background-color: transparent;
 	/*box-shadow: 0px 3px 5px 0px rgba(180,180,180,1);*/
+
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+	margin: 10px;
 }
 
 .box2 {
@@ -898,4 +771,8 @@
 
 button {
 	margin: 5pt 5pt 0 0;
+}
+
+#elements .doodad.selected {
+	background-color: #0003;
 }
