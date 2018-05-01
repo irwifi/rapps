@@ -49,6 +49,7 @@ $( document ).ready( function( ) {
 						var element_width = $(".selected").width();
 						if(element_width == 30) {element_width = 27;}
 						$("#myRange").val(element_width/9);
+						$(".action_panel .schmerzlevel_val").text($("#myRange").val());
 						$(".action_panel").show();
 					} else {
 						$(this).removeClass("selected");
@@ -78,7 +79,14 @@ $( document ).ready( function( ) {
 
 		$("#myRange").on("input", function(a) {
 			var scale = $("#myRange").val() * 9;
+			var offset_change = 4;
+			if($(".doodad.selected").width() < scale) {
+				offset_change = offset_change * (-1);
+			}
+
+			$(".doodad.selected").offset({top: $(".doodad.selected").offset().top + offset_change, left: $(".doodad.selected").offset().left + offset_change});
 			$(".doodad.selected").width(scale).height(scale);
+			$(".action_panel .schmerzlevel_val").text($("#myRange").val());
 		});
 	}
 } );

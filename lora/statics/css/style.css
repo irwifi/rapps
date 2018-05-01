@@ -315,6 +315,26 @@ img.le {
     left:  0;
 }
 
+.action_panel .schmerzlevel {
+    height: 45px;
+    line-height: 45px;
+    font-size: 28px;
+    color: #ce5050;
+    background: #efd2d2;
+    margin: 0 auto;
+    margin-top: -50px;
+    width: 240px;
+    text-align: center;
+    border: 2px solid;
+}
+
+.action_panel .schmerzlevel_val {
+    font-weight: bold;
+    font-size: 36px;
+    color: #130000;
+    vertical-align: bottom;
+}
+
 .action_panel .slider_box {
     margin-right: 108px;
 }

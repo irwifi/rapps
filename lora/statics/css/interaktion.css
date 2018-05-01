@@ -19,6 +19,7 @@
 	transition: -webkit-transform 0.3s ease-in-out;
 	transition: transform 0.3s ease-in-out;
 }
+
 /*SCHMERZEN*/
 
 #schmerz {
@@ -82,69 +83,26 @@
 }
 
 #wellen {
-	position: relative;
 	background-image: url(../../statics/img/wellen.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #luft {
-	position: relative;
 	background-image: url(../../statics/img/luft.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #zittern1 {
-	position: relative;
 	background-image: url(../../statics/img/zittern1.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
 
 #zittern2 {
-	position: relative;
 	background-image: url(../../statics/img/zittern2.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
+
 }
 
 #schlafen {
-	position: relative;
 	background-image: url(../../statics/img/schlafen.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
-	cursor: pointer;
-	width: 30px;
-	height: 30px;
-	margin: 10px;
-	/*border: 1px solid black;*/
 }
+
 /*MEDIKATION*/
 
 #fiebermesseri {
@@ -774,5 +732,5 @@ button {
 }
 
 #elements .doodad.selected {
-	background-color: #0003;
+	/* background-color: #0003; */
 }
