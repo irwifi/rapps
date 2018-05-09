@@ -8,6 +8,6 @@ $(function() {
   iframe_height = (iframe_width * 15) / 16;
   source = $("#source_hook").attr("data-source");
 
-  $("#source_hook").after("<iframe id='source_iframe' src='" + source + "' frameborder='2' scrolling='no' width='" + iframe_width + "px' height='" + iframe_height + "px'></iframe> ");
+  $("#source_hook").after("<iframe id='source_iframe' src='" + source + "' frameborder='2' scrolling='yes' width='" + iframe_width + "px' height='" + iframe_height + "px'></iframe> ");
   $("#source_iframe").css({"position": "relative", "display": "block", "margin": "0 auto", "z-index": "999991"});
 });

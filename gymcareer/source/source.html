@@ -5,7 +5,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
-  <link rel="stylesheet" href="source.css">
+  <link rel="stylesheet" href="./source.css">
 </head>
 
 <body>
@@ -26,26 +26,7 @@
 
   			<div class="row job_carousel">
 	  			<div class="col left_arrow"><i class="fas fa-caret-left"></i></div>
-	  			<div class="job_list">
-
-<script type='text/javascript'>
-  var embeddable_job_widget_options = {
-    'script_url' : 'https://www.gymcareer.com/?embed=wp_job_manager_widget',
-    'keywords'   : '',
-    'location'   : '',
-    'categories' : '',
-    'job_types'  : '',
-    'per_page'   : '5',
-    'pagination' : '0'
-  };
-</script>
-<script type='text/javascript' src='https://www.gymcareer.com/wp-content/plugins/wp-job-manager-embeddable-job-widget/assets/js/embed.js'></script>
-
-<div id="embeddable-job-widget">
-  <div id="embeddable-job-widget-content"></div>
-</div>
-
-          </div>
+	  			<div class="job_list"></div>
 	  			<div class="col right_arrow"><i class="fas fa-caret-right"></i></div>
 	  		</div>
   		</div>
@@ -53,22 +34,33 @@
 
   	<div class="page2">
   		<div class="search_panel">
-  			<div class="search_category"></div>
-  			<div class="search_location"></div>
-  			<div class="search_button"></div>
+        <div class="search_fields">
+    			<div class="search_category"><input type="text" name="search_category" class="search_category_input" placeholder="Categories" /></div>
+    			<div class="search_location"><input type="text" name="search_location" class="search_location_input" placeholder="Location" /></div>
+        </div>
+  			<div class="search_button">Search</div>
   		</div>
 
   		<div class="job_list"></div>
 
-  		<div class="more_results"></div>
+  		<a href="https://gymcareer.com" target="_blank"><div class="more_results view_more">View more results</div></a>
+
+      <div class="sample_job job_item">
+        <div class="job_company">company</div>
+        <div class="job_title">title</div>
+        <div class="job_location">location</div>
+        <div class="job_more"><a href="" target="_blank"><div class="view_more">View more</div></a></div>
+      </div>
   	</div>
 
   	<a href="https://gymcareer.com" target="_blank"><div class="powered_by"><span class="powered">Powered by</span> gym<span class="career">career</span></div></a>
   </div>
 
+  <div id="embeddable-job-widget-content"></div>
+
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="source.js"></script>
+	<script src="./source.js"></script>
 </body>
 </html>
