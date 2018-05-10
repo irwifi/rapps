@@ -14,6 +14,15 @@ $( function( ) {
 	$( ".page1 .search_button" ).on( "click", function( ) {
 		$( ".page1" ).hide( );
 		$( ".page2" ).show( );
+		embeddable_job_widget_options.location = $(".page1 .search_location_input").val();
+		embeddable_job_widget_options.categories = $(".page1 .search_category_input").val();
+		load_jobs( embeddable_job_widget_options );
+	} );
+
+	$( ".page2 .search_button" ).on( "click", function( ) {
+		embeddable_job_widget_options.location = $(".page2 .search_location_input").val();
+		embeddable_job_widget_options.categories = $(".page2 .search_category_input").val();
+		$(".page2 .job_list").html("");
 		load_jobs( embeddable_job_widget_options );
 	} );
 
