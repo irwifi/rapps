@@ -1,212 +1,268 @@
-a {
-	text-decoration: none;
-}
+/* Global ================================================================= START */
+	a {
+		text-decoration: none;
+	}
 
-.page1 {
-	margin-top: 20px;
-	text-align: center;
-}
+	.powered_by {
+		background: #0378FD;
+		color: #FFF;
+		font-weight: bold;
+		width: 280px;
+		height: 64px;
+		padding: 7px;
+		font-size: 28px;
+		margin: 0 auto;
+		margin-top: 90px;
+		text-align: center;
+		cursor: pointer;
+	}
 
-.page1 .page_title {
-	padding: 10px 0;
-	font-size: 42px;
-	color: #777;
-	font-weight: bold;
-	margin-bottom: 30px;
-}
+	.powered_by .powered{
+		font-size: 14px;
+		vertical-align: middle;
+	}
 
-.page1 .search_category, .page1 .search_location {
-	display: inline-block;
-}
+	.powered_by .career{
+		font-weight: normal;
+		font-size: 24px;
+	}
 
-.page1 .search_category input, .page1 .search_location input {
-	margin:  10px 20px;
-	height: 40px;
-	border-radius: 10px;
-  border: 1px solid #929292;
-  font-size: 24px;
-  text-align: center;
-  padding:  32px 0;
-  width:  430px;
-}
+	#embeddable-job-widget-content {
+		width: 0;
+		height: 0;
+		overflow: hidden;
+	}
+/* Global ================================================================= END */
 
-.page1 .search_button {
-	border-radius:  10px;
-	background: #0378FD;
-	color:  #FFF;
-	font-weight: bold;
-	width: 330px;
-	height: 65px;
-	padding: 11px;
-	font-size: 28px;
-	margin: 0 auto;
-	margin-top: 30px;
-	cursor: pointer;
-}
+/* Page1 ================================================================= START */
+	.page1 {
+		margin-top: 20px;
+		text-align: center;
+	}
 
-.page1 .job_panel {
-	margin-top: 130px;
-}
+	.page1 .page_title {
+		padding: 10px 0;
+		font-size: 42px;
+		color: #777;
+		font-weight: bold;
+		margin-bottom: 30px;
+	}
 
-.page1 .carousel_label {
-	color: #888;
-	font-size:  30px;
-	font-weight: bold;
-	margin-bottom: 20px;
-}
+	.page1 .search_category, .page1 .search_location {
+		display: inline-block;
+	}
 
-.page1 .job_carousel {
-	width:  960px;
-	margin: 0 auto;
-}
+	.page1 .search_category input, .page1 .search_location input {
+		margin:  10px 20px;
+		height: 40px;
+		border-radius: 10px;
+	  border: 1px solid #929292;
+	  font-size: 24px;
+	  text-align: center;
+	  padding:  32px 0;
+	  width:  430px;
+	}
 
-.page1 .left_arrow, .page1 .right_arrow {
-	font-size: 52px;
-	margin-top: 90px;
-}
+	.page1 .search_button {
+		border-radius:  10px;
+		background: #0378FD;
+		color:  #FFF;
+		font-weight: bold;
+		width: 330px;
+		height: 65px;
+		padding: 11px;
+		font-size: 28px;
+		margin: 0 auto;
+		margin-top: 30px;
+		cursor: pointer;
+	}
 
-.page1 .job_list {
-	border:  1px solid #929292;
-	border-radius:  18px;
-	height: 260px;
-	width: 840px;
-}
+	.page1 .job_panel {
+		margin-top: 130px;
+	}
 
-.page2 {
-	display: none;
-	width: 950px;
-	margin:  0 auto;
-	margin-top: 50px;
-	text-align: center;
-}
+	.page1 .carousel_label {
+		color: #888;
+		font-size:  30px;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
 
-.page2 .search_panel {
-	height: 90px;
-}
+	.page1 .job_carousel_container {
+		width:  1000px;
+		margin: 0 auto;
+	}
 
-.page2 .search_fields {
-	float: left;
-}
+	.page1 .left_arrow, .page1 .right_arrow {
+		font-size: 52px;
+		margin:  0 auto;
+		margin-top: 70px;
+		cursor: pointer;
+		padding: 0;
+		width: 20px;
+	}
 
-.page2 .search_category, .page2 .search_location {
-	display: inline-block;
-}
+	.page1 .job_carousel {
+		border:  1px solid #929292;
+		border-radius:  18px;
+		height: 220px;
+		width: 840px;
+		overflow: hidden;
+	}
 
-.page2 .search_category input, .page2 .search_location input {
-	margin:  10px 0;
-	margin-right: 45px;
-	height: 45px;
-	border-radius: 8px;
-  border: 1px solid #929292;
-  font-size: 20px;
-  text-align: center;
-  padding:  15px 0;
-  width:  280px;
-}
+	.page1 .job_item {
+    display: inline-block;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    margin-left: -1px;
+    width: 280px;
+    height: 220px;
+    padding:  20px 0;
+	}
 
-.page2 .search_button {
-	float: right;
-	border-radius: 8px;
-	background: #0378FD;
-	color: #FFF;
-	font-weight: bold;
-	width: 170px;
-	height: 45px;
-	padding: 7px;
-	font-size: 19px;
-	cursor: pointer;
-	margin-top: 9px;
-}
+	.page1 .job_company {
+		font-size: 14px;
+		font-weight: bold;
+		height: 40px;
+	}
 
-.job_list {
-	clear: both;
-}
+	.page1 .job_title {
+		font-size: 14px;
+		font-weight: bold;
+		height: 25px;
+	}
 
-.page2 .job_item {
-	border-top: 1px solid;
-	border-bottom: 1px solid;
-	margin-top: -1px;
-	padding: 50px 0;
-}
+	.page1 .job_location {
+		font-size: 14px;
+		font-weight: bold;
+		height: 60px;
+	}
 
-.page2 .job_company {
-	display: inline-block;
-	width: 180px;
-	text-align: left;
-	font-size: 14px;
-	font-weight: bold;
-}
+	.page1 .view_more {
+		border-radius: 5px;
+		background: #0378FD;
+		color: #FFF;
+		font-weight: bold;
+		width: 200px;
+		height: 42px;
+		padding: 11px;
+		font-size: 13px;
+		margin: 0 auto;
+		cursor: pointer;
+	}
 
-.page2 .job_title {
-	display: inline-block;
-	width: 180px;
-	text-align: left;
-	font-size: 14px;
-	font-weight: bold;
-}
+	.page1 .sample_job {
+		display: none;
+	}
+/* Page1 ================================================================= END */
 
-.page2 .job_location {
-	display: inline-block;
-	width: 370px;
-	text-align: left;
-	font-size: 14px;
-	font-weight: bold;
-}
+/* Page2 ================================================================= START */
+	.page2 {
+		display: none;
+		width: 950px;
+		margin:  0 auto;
+		margin-top: 50px;
+		text-align: center;
+	}
 
-.page2 .job_more {
-	display: inline-block;
-	width: 200px;
-}
+	.page2 .search_panel {
+		height: 90px;
+	}
 
-.page2 .view_more {
-	display: inline-block;
-	border-radius: 5px;
-	background: #0378FD;
-	color: #FFF;
-	font-weight: bold;
-	width: 200px;
-	height: 42px;
-	padding: 11px;
-	font-size: 13px;
-	margin: 0 auto;
-	cursor: pointer;
-}
+	.page2 .search_fields {
+		float: left;
+	}
 
-.page2 .more_results {
-	margin-top:  33px;
-	margin-bottom:  70px;
-}
+	.page2 .search_category, .page2 .search_location {
+		display: inline-block;
+	}
 
-.page2 .sample_job {
-	display: none;
-}
+	.page2 .search_category input, .page2 .search_location input {
+		margin:  10px 0;
+		margin-right: 45px;
+		height: 45px;
+		border-radius: 8px;
+	  border: 1px solid #929292;
+	  font-size: 20px;
+	  text-align: center;
+	  padding:  15px 0;
+	  width:  280px;
+	}
 
-.powered_by {
-	background: #0378FD;
-	color: #FFF;
-	font-weight: bold;
-	width: 280px;
-	height: 64px;
-	padding: 7px;
-	font-size: 28px;
-	margin: 0 auto;
-	margin-top: 90px;
-	text-align: center;
-	cursor: pointer;
-}
+	.page2 .search_button {
+		float: right;
+		border-radius: 8px;
+		background: #0378FD;
+		color: #FFF;
+		font-weight: bold;
+		width: 170px;
+		height: 45px;
+		padding: 7px;
+		font-size: 19px;
+		cursor: pointer;
+		margin-top: 9px;
+	}
 
-.powered_by .powered{
-	font-size: 14px;
-	vertical-align: middle;
-}
+	.job_list {
+		clear: both;
+	}
 
-.powered_by .career{
-	font-weight: normal;
-	font-size: 24px;
-}
+	.page2 .job_item {
+		border-top: 1px solid;
+		border-bottom: 1px solid;
+		margin-top: -1px;
+		padding: 50px 0;
+	}
 
-#embeddable-job-widget-content {
-	width: 0;
-	height: 0;
-	overflow: hidden;
-}
+	.page2 .job_company {
+		display: inline-block;
+		width: 180px;
+		text-align: left;
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+	.page2 .job_title {
+		display: inline-block;
+		width: 180px;
+		text-align: left;
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+	.page2 .job_location {
+		display: inline-block;
+		width: 370px;
+		text-align: left;
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+	.page2 .job_more {
+		display: inline-block;
+		width: 200px;
+	}
+
+	.page2 .view_more {
+		display: inline-block;
+		border-radius: 5px;
+		background: #0378FD;
+		color: #FFF;
+		font-weight: bold;
+		width: 200px;
+		height: 42px;
+		padding: 11px;
+		font-size: 13px;
+		margin: 0 auto;
+		cursor: pointer;
+	}
+
+	.page2 .more_results {
+		margin-top:  33px;
+		margin-bottom:  70px;
+	}
+
+	.page2 .sample_job {
+		display: none;
+	}
+/* Page2 ================================================================= END */

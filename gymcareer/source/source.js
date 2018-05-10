@@ -11,10 +11,9 @@ $( function( ) {
 
 	load_jobs( embeddable_job_widget_options );
 
-	$( ".search_button" ).on( "click", function( ) {
+	$( ".page1 .search_button" ).on( "click", function( ) {
 		$( ".page1" ).hide( );
 		$( ".page2" ).show( );
-
 		load_jobs( embeddable_job_widget_options );
 	} );
 
@@ -38,7 +37,16 @@ $( function( ) {
 					}
 
 					if ( $( ".page1" ).is( ":visible" ) ) {
-						$( ".page1 .job_list" ).append( $( "#embeddable-job-widget-content" ).html( ) );
+						$( ".embeddable-job-widget-listing" ).each(
+							function( i ) {
+								$(".page1 .sample_job").clone().prependTo(".page1 .job_list");
+								$(".page1 .job_item.sample_job").find(".job_company").text($( this ).find( ".embeddable-job-widget-listing-job-company" ).text( ));
+								$(".page1 .job_item.sample_job").find(".job_title").text($( this ).find( ".embeddable-job-widget-listing-title" ).text( ));
+								$(".page1 .job_item.sample_job").find(".job_location").text($( this ).find( ".embeddable-job-widget-listing-job-location" ).text( ));
+								$(".page1 .job_item.sample_job").find(".job_more").find("a").attr("href", $( this ).find( "a" ).attr("href"));
+								$(".page1 .job_list .sample_job").removeClass("sample_job");
+							}
+						);
 					} else {
 						$( ".embeddable-job-widget-listing" ).each(
 							function( i ) {

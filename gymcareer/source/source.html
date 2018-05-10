@@ -5,6 +5,8 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
+  <link rel="stylesheet" href="./sly/ospb.css">
+  <link rel="stylesheet" href="./sly/horizontal.css">
   <link rel="stylesheet" href="./source.css">
 </head>
 
@@ -12,6 +14,7 @@
   <div class="container-fluid main_container">
   	<div class="page1">
   		<div class="page_title">Page Title</div>
+
   		<div class="search_panel">
   			<div class="search_category">
   				<input type="text" name="search_category" class="search_category_input" placeholder="Categories" />
@@ -21,15 +24,35 @@
   			</div>
   			<div class="search_button">Search</div>
   		</div>
+
   		<div class="job_panel">
   			<div class="carousel_label">New jobs carousel</div>
 
-  			<div class="row job_carousel">
-	  			<div class="col left_arrow"><i class="fas fa-caret-left"></i></div>
-	  			<div class="job_list"></div>
-	  			<div class="col right_arrow"><i class="fas fa-caret-right"></i></div>
-	  		</div>
-  		</div>
+        <div class="pagespan container row job_carousel_container">
+          <div class="col left_arrow prev"><i class="fas fa-caret-left"></i></div>
+          <div class="job_carousel">
+            <div class="frame" id="centered" style="overflow: hidden;">
+              <ul class="job_list" style="transform: translateZ(0px) translateX(-5471px); width: 6840px;">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col right_arrow next"><i class="fas fa-caret-right"></i></div>
+        </div>
+	  	</div>
+
+      <li class="sample_job job_item">
+        <div class="job_company">company</div>
+        <div class="job_title">title</div>
+        <div class="job_location">location</div>
+        <div class="job_more"><a href="" target="_blank"><div class="view_more">View more</div></a></div>
+      </li>
   	</div>
 
   	<div class="page2">
@@ -58,9 +81,12 @@
 
   <div id="embeddable-job-widget-content"></div>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="./sly/plugins.js"></script>
+  <script src="./sly/sly.js"></script>
+  <script src="./sly/horizontal.js"></script>
 	<script src="./source.js"></script>
 </body>
 </html>
