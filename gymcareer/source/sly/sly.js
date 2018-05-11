@@ -128,8 +128,8 @@
 		var $backwardButton = $(o.backward);
 		var $prevButton = $(".prev");
 		var $nextButton = $(".next");
-		var $prevPageButton = $(o.prevPage);
-		var $nextPageButton = $(o.nextPage);
+		var $prevPageButton = $(".prevPage");
+		var $nextPageButton = $(".nextPage");
 		var callbacks = {};
 		var last = {};
 		var animation = {};

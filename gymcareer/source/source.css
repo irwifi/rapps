@@ -114,24 +114,28 @@
     margin-left: -1px;
     width: 280px;
     height: 220px;
-    padding:  20px 0;
+    padding:  12px 0;
 	}
 
 	.page1 .job_company {
 		font-size: 14px;
 		font-weight: bold;
-		height: 40px;
+		height: 80px;
+	}
+
+	.page1 .job_company img {
+		max-height: 90px;
 	}
 
 	.page1 .job_title {
 		font-size: 14px;
 		font-weight: bold;
-		height: 25px;
+		height: 20px;
 	}
 
 	.page1 .job_location {
 		font-size: 14px;
-		height: 60px;
+		height: 30px;
 	}
 
 	.page1 .view_more {
@@ -211,7 +215,7 @@
 
 	.page2 .job_company {
 		display: inline-block;
-		width: 140px;
+		width: 150px;
 		text-align: left;
 		font-size: 14px;
 		font-weight: bold;
@@ -227,7 +231,7 @@
 
 	.page2 .job_location {
 		display: inline-block;
-		width: 370px;
+		width: 360px;
 		text-align: left;
 		font-size: 14px;
 	}

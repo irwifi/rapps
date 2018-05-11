@@ -49,7 +49,12 @@ $( function( ) {
 						$( ".embeddable-job-widget-listing" ).each(
 							function( i ) {
 								$(".page1 .sample_job").clone().prependTo(".page1 .job_list");
-								$(".page1 .job_item.sample_job").find(".job_company").text($( this ).find( ".embeddable-job-widget-listing-job-company" ).text( ));
+								// $(".page1 .job_item.sample_job").find(".job_company").text($( this ).find( ".embeddable-job-widget-listing-job-company" ).text( ));
+								var logo;
+								if($( this ).find( ".embeddable-job-widget-listing-job-company" ).text( ) == "Anytime Fitness") {logo = "2018/04/job_icon-1-150x150.png";}
+								if($( this ).find( ".embeddable-job-widget-listing-job-company" ).text( ) == "PureGym") {logo = "2017/10/pue_g.png";}
+								if($( this ).find( ".embeddable-job-widget-listing-job-company" ).text( ) == "The Gym Group") {logo = "2018/02/download-2-3.jpg";}
+								$(".page1 .job_item.sample_job").find(".job_company").html("<img src='https://www.gymcareer.com/wp-content/uploads/" + logo + "' />");
 								$(".page1 .job_item.sample_job").find(".job_title").text($( this ).find( ".embeddable-job-widget-listing-title" ).text( ));
 								$(".page1 .job_item.sample_job").find(".job_location").text($( this ).find( ".embeddable-job-widget-listing-job-location" ).text( ));
 								$(".page1 .job_item.sample_job").find(".job_more").find("a").attr("href", $( this ).find( "a" ).attr("href"));
@@ -60,7 +65,12 @@ $( function( ) {
 						$( ".embeddable-job-widget-listing" ).each(
 							function( i ) {
 								$(".page2 .sample_job").clone().appendTo(".page2 .job_list");
-								$(".page2 .job_item.sample_job").find(".job_company").text($( this ).find( ".embeddable-job-widget-listing-job-company" ).text( ));
+								// $(".page2 .job_item.sample_job").find(".job_company").text($( this ).find( ".embeddable-job-widget-listing-job-company" ).text( ));
+								var logo;
+								if($( this ).find( ".embeddable-job-widget-listing-job-company" ).text( ) == "Anytime Fitness") {logo = "2018/04/job_icon-1-150x150.png";}
+								if($( this ).find( ".embeddable-job-widget-listing-job-company" ).text( ) == "PureGym") {logo = "2017/10/pue_g.png";}
+								if($( this ).find( ".embeddable-job-widget-listing-job-company" ).text( ) == "The Gym Group") {logo = "2018/02/download-2-3.jpg";}
+								$(".page2 .job_item.sample_job").find(".job_company").html("<img src='https://www.gymcareer.com/wp-content/uploads/" + logo + "' />");
 								$(".page2 .job_item.sample_job").find(".job_title").text($( this ).find( ".embeddable-job-widget-listing-title" ).text( ));
 								$(".page2 .job_item.sample_job").find(".job_location").text($( this ).find( ".embeddable-job-widget-listing-job-location" ).text( ));
 								$(".page2 .job_item.sample_job").find(".job_more").find("a").attr("href", $( this ).find( "a" ).attr("href"));
