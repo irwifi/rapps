@@ -1,1 +1,0 @@
-<?php header("Location: theme/pages/index.php");?>
